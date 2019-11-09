@@ -14,11 +14,11 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
+        $blogs = Blog::paginate(3);
         //dd($blogs);
         
         //  dia dalam /blogs/index.blade.php
-        return view('blogs.index');
+        return view('blogs.index')->with(compact('blogs'));
     }
 
     /**
@@ -42,12 +42,16 @@ class BlogController extends Controller
         //dd($request);
 
         //Method 1
-        $blog = new Blog();
-        $blog-title = $request->get('title');
-        $blog->body = $request->get('body');
-        $blog->save();
+        //$blog = new Blog();
+        //$blog->title = $request->get('title');
+        //$blog->body = $request->get('body');
+        //$blog->save();
 
-        return view('blogs.store');
+        //Method 2
+        $blog = Blog::create($request->only('title', 'body'));
+
+        //return view('blogs.index');
+        return redirect()->route('blog:index')->with(['alert-type' => 'alert-success','alert' => 'Your blog saved']);
     }
 
     /**

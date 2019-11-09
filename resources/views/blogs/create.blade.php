@@ -13,19 +13,20 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form>
+                    <form action = "" method = "POST">
+                    @csrf
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Put your title here">
+                            <input name = "title" type="text" class="form-control" id="formGroupExampleInput" placeholder="Put your title here">
                         </div>
                         <div class="form-group">
                             <label for="body">Description</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Fill in the description">
+                            <input name= "body" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Fill in the description">
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Send!</button>
-                            <a href ="{{ route('blog:index')}} class="btn btn-link">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Send!</button>
+                            <a href ="{{ route('blog:index')}}" class="btn btn-link">Cancel</a>
                         <div>
                         </div>
                     </form>
