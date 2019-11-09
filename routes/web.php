@@ -21,4 +21,13 @@ Route::get('/testing', function () {
 
 Route::view('/welcome', 'welcome');
 
-Auth::routes();
+Route::get('/view', 'WelcomeController@view');
+
+Auth::routes(['register' => false]);
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Below this is blog management
+Route::get('/blogs/index', 'BlogController@index')->name('blog:index');
+
+Route::get('/blogs/create', 'BlogController@create')->name('blog:create');
