@@ -20,6 +20,5 @@ Route::get('/testing', function () {
 });
 
 Route::view('/welcome', 'welcome');
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
