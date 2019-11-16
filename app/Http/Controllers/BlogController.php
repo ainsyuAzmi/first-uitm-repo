@@ -16,7 +16,7 @@ class BlogController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
         $blogs = Blog::paginate(3);
@@ -52,8 +52,12 @@ class BlogController extends Controller
         //$blog->body = $request->get('body');
         //$blog->save();
 
-        //Method 2
-        $blog = Blog::create($request->only('title', 'body'));
+        //Method 2 - Mass Assignment
+        //$blog = Blog::create($request->only('title', 'body'));
+
+        //Method 2 - Mass Assignment with Relationship 1:M
+        $user = auth()->user();
+        $blog = $user->blogs()->create($request->only('title', 'body'));
 
         //return view('blogs.index');
         return redirect()->route('blog:index')->with(['alert-type' => 'alert-success','alert' => 'Your blog saved']);

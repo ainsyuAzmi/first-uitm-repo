@@ -33,6 +33,10 @@
                                         <td>{{ $blog->id}}</td>
                                         <td>{{ $blog->title}}</td>
                                         <td>{{ $blog->created_at->diffForHumans()}}</td>
+                                        <td>{{ $blog->penulis}}</td>
+
+
+                                        <td></td>
                                         <td>
                                             <a href="{{ route('blog:show', $blog) }}" class="btn btn-primary">Show</a>
                                             <a href="{{ route('blog:edit', $blog) }}" class="btn btn-primary">Edit</a>

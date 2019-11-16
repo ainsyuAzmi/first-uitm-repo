@@ -17,6 +17,14 @@
                             {{ $blog->body }}
                         </div>
                         <div class="form-group">
+                            Created at: 
+                           {{ $blog->created_at->diffForHumans()}}
+                        </div>
+                        <div class="form-group">
+                            Written by: 
+                            {{ $blog->penulis }}
+                        </div>
+                        <div class="form-group">
                             <a href="{{ route('blog:index')}}" class="btn btn-link">Back</a>
                         </div>
                     </form>
