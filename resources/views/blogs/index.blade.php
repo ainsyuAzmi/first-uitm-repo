@@ -11,6 +11,8 @@
                     </div>
                 @endif
                 <div class="card-header">Blog Index</div>
+                
+                <a href="{{route('blog:create')}}" class="btn btn-primary">Add New Blog</a>
 
                 <div class="card-body">
                     Display all the blog here
