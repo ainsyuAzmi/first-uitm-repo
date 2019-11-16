@@ -1,9 +1,28 @@
-<h1>This is show.blade.php <h1>
+@extends('layouts.app')
 
-Title : {{ $blog->title}}
-<br>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Show {{$blog->title}}</div>
 
-Body : {{ $blog->body}}
-<br>
-
-Created at : {{ $blog->created_at->diffForHumans()}}
+                <div class="card-body">
+                        <div class="form-group">
+                            Title: 
+                            {{ $blog->title}}
+                        </div>
+                        <div class="form-group">
+                            Body: 
+                            {{ $blog->body }}
+                        </div>
+                        <div class="form-group">
+                            <a href="{{ route('blog:index')}}" class="btn btn-link">Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

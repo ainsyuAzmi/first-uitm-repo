@@ -35,3 +35,9 @@ Route::get('/blogs/create', 'BlogController@create')->name('blog:create');
 Route::post('/blogs/create', 'BlogController@store')->name('blog:store');
 
 Route::get('blogs/index/{blog}', 'BlogController@show')->name('blog:show');
+
+Route::get('blogs/index/edit/{blog}', 'BlogController@edit')->name('blog:edit');
+
+Route::post('blogs/index/edit/{blog}', 'BlogController@update')->name('blog:update');
+
+Route::get('blogs/index/delete/{blog}', 'BlogController@padam')->name('blog:padam');
