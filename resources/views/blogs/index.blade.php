@@ -34,6 +34,7 @@
                                         <td>{{ $blog->title}}</td>
                                         <td>{{ $blog->created_at->diffForHumans()}}</td>
                                         <td>
+                                            <a href="{{ route('blog:show', $blog) }}" class="btn btn-primary">Show</a>
                                             <a href="" class="btn btn-primary">Edit</a>
                                             <a href="" class="btn btn-danger"
                                                 onclick="return confirm('Are you sure?')">Delete</a>

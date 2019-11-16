@@ -28,8 +28,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Below this is blog management
-Route::get('admin/hacker/blogs/index', 'BlogController@index')->name('blog:index');
+Route::get('/blogs/index', 'BlogController@index')->name('blog:index');
 
 Route::get('/blogs/create', 'BlogController@create')->name('blog:create');
 
 Route::post('/blogs/create', 'BlogController@store')->name('blog:store');
+
+Route::get('blogs/index/{blog}', 'BlogController@show')->name('blog:show');
